@@ -1131,7 +1131,7 @@ class CRM_Core_BAO_CustomField extends CRM_Core_DAO_CustomField implements \Civi
 
     if (self::isSerialized($field) && !is_array($value)) {
       // The autocomplete widget for selecting a default value uses a comma in-between values.
-      if ($field['html_type'] === 'Autocomplete-Select' && str_contains($value, ',')) {
+      if ($field['html_type'] === 'Autocomplete-Select' && str_contains((string)$value, ',')) {
         $value = explode(',', $value);
       }
       else {
